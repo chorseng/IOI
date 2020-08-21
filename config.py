@@ -1,4 +1,6 @@
 import tensorflow as tf
+import sys
+
 def get_args():
 
     tf.flags.DEFINE_string('data_path', '../ubuntu', 'Path to dataset. ')
@@ -53,6 +55,7 @@ def get_args():
     tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
 
     FLAGS = tf.flags.FLAGS
-    FLAGS._parse_flags() 
+    #FLAGS._parse_flags() 
+    FLAGS(sys.argv)
     return FLAGS
 
